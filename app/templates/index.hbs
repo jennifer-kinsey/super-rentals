@@ -1,14 +1,43 @@
 <h1> Welcome to Super Rentals </h1>
 
-We hope you find exactly what you're looking for in a place to stay.
+<p>We hope you find exactly what you're looking for in a place to stay.</p>
+
+<hr>
+
+<h2>Announcements</h2>
 
 <ul>
-  {{#each model as |rental|}}
-    {{rental-tile rental=rental destroyRental="destroyRental"}}
+  {{#each model.announcements as |announcement|}}
+    {{announcement-tile announcement=announcement destroyAnnouncement="destroyAnnouncement"}}
+  {{/each}}
+</ul>
+
+{{new-announcement saveAnnouncement2="saveAnnouncement3"}}
+<hr>
+
+<h2> Available Rentals </h2>
+
+<ul>
+  {{#each model.rentals as |rental|}}
+     {{rental-tile rental=rental}}
   {{/each}}
 </ul>
 
 {{new-rental saveRental2="saveRental3"}}
+
+<hr>
+
+<h2> All Reviews </h2>
+
+<ul>
+  {{#each model.reviews as |review|}}
+    <li>{{review.rating}} - {{review.content}} - by {{review.author}}</li>
+  {{/each}}
+</ul>
+
+{{new-review saveReview="saveReview"}}
+
+<hr>
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
