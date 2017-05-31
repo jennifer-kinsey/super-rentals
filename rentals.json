@@ -24,6 +24,7 @@
   }, {
     "author": "Alex",
     "rating": 9,
-    "content": "Nice view of the volcano!"
+    "content": "Nice view of the volcano!",
+    "rental":  0
   }]
 }
